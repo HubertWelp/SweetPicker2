@@ -1,2 +1,2 @@
 # SweetPicker2
-Complementing Version of the previous SweetPicker1 project
+Complementing version of the previous SweetPicker1 project
