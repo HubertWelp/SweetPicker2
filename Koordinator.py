@@ -18,16 +18,14 @@ class Koordinator:
     def onPersonErkannt(self):
         print('Gesicht erkannt')
         ret = self.nd.begruesse()
-        print('ret=')
-        print(ret)
-		print('ANTOWRT:')
-        if ret == 0:
-            print("keine Antwort")
-        elif ret == 1:
-            print("Milky Way")  
+        print('ret=',ret)
+        if ret==0:
+            print('keine Antowrt')
+        if (ret==1):
+            print('Milky Way')  
             self.bw.greifeObjektLinks()
-        elif ret == 2:
-            print("Mars")
+        if (ret==2):
+            print('Mars')
 
     def ausgeben(self):
         print(self.name)
@@ -75,7 +73,7 @@ def main():
     gesichtserkenner = Gesichtserkenner("gesichtserkenner")
     begruesser = NutzerDialog("begruesser")
     k=Koordinator("BLA", gesichtserkenner,begruesser)
-#    gesichtserkenner.onFaceDetected()
+    gesichtserkenner.onFaceDetected()
 #    gesichtserkenner.run()
     try:
         while True:

@@ -11,10 +11,10 @@ class NutzerDialog(ALModule):
         self.tts = ALProxy('ALTextToSpeech')
         self.dialog_p.setLanguage("German")
         # Load topic - absolute path is required
-#        self.topf_path = "/home/welp/python/SweetPicker/begruessung_ged.top"
+        self.topf_path = "C:\\Users\\ITL.NAO.1\\Documents\\SWT-SP2\\SweetPicker2\\begruessung_ged.top"
 #        self.topf_path = self.topf_path.decode('utf-8')
 #        self.topic = self.dialog_p.loadTopic(self.topf_path.encode('utf-8'))
-        self.topf_path = "/home/nao/begruessung_ged.top"
+#        self.topf_path = "/home/nao/begruessung_ged.top"
         global memory
         memory = ALProxy("ALMemory")
         print(self.globalObjectName)
@@ -52,6 +52,7 @@ class NutzerDialog(ALModule):
 
     def onReturnDialog(self, *_args):
         """ this method has to be bound because it is a callback. Therefore this comment. """
-        self.ret = memory.getData("retDialog")
+        r = memory.getData("retDialog")
+        self.ret = int(r)
         print(self.ret)
         print("onReturnDialog")
