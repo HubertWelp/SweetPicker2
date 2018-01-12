@@ -20,6 +20,7 @@ class Koordinator:
         ret = self.nd.begruesse()
         print('ret=')
         print(ret)
+		print('ANTOWRT:')
         if ret == 0:
             print("keine Antwort")
         elif ret == 1:
