@@ -1,0 +1,20 @@
+topic: ~ExampleDialog()
+language: ged
+concept:(greetings) ^rand[hi hallo "guten tag"]
+
+proposal: ~greetings
+u: (e:onStart) ~greetings
+u: (~greetings) Darff ich Ihnen ein Mars anbieten?
+    u1: (ja) Ok, einen Moment bitte $retDialog=1
+    u1: ([nein nee]) Ok, Dann vielleicht ein Milky Way?
+        u2: (ja) Ok, einen Moment bitte $retDialog=2
+        u2: (nein nee) Ok, dann vielleicht beim nächsten Mal. Auf wiedersehen. $retDialog=0 
+        u2: ([e:Dialog/NotSpeaking20 e:Dialog/NotUnderstood]) Ich habe Sie nicht verstanden. Auf wiedersehen $retDialog=0
+    u1: ([e:Dialog/NotSpeaking20 e:Dialog/NotUnderstood]) Entschuldigung. Ich habe Sie nicht verstanden. Möchten Sie ein Mars?
+        u2: (ja) Ok, einen Moment bitte $retDialog=1
+        u2: ([nein nee]) Ok, Dann vielleicht ein Milky Way?
+            u3: (ja) Ok, einen Moment bitte $retDialog=2
+            u3: ([nein nee]) Ok, dann vielleicht beim nächsten Mal. Auf wiedersehen. $retDialog=0 
+            u3: ([e:Dialog/NotSpeaking20 e:Dialog/NotUnderstood]) Ich habe Sie nicht verstanden. Auf wiedersehen $retDialog=0
+        u2: ([e:Dialog/NotSpeaking15 e:Dialog/NotUnderstood]) Ich habe Sie nicht verstanden. Auf wiedersehen $retDialog=0
+u: ([e:Dialog/NotSpeaking20 e:Dialog/NotUnderstood]) mmmm $retDialog=0
