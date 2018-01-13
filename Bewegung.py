@@ -8,7 +8,14 @@ class Bewegung:
                 self.postureProxy = ALProxy("ALRobotPosture")
 
         def greifeObjektLinks(self):
+                print('greifeObjektLinks')
                 self.postureProxy.goToPosture("Crouch", 0.5)
 
         def greifeObjektRechts(self):
+                print('greifeObjektRechts')
+                self.postureProxy.goToPosture("Stand", 0.5)
                 bla=1
+
+        def zuruecklegenObjekt(self):
+                print('zuruecklegenObjekt')
+                self.postureProxy.goToPosture("Sit", 0.5)

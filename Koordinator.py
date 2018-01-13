@@ -17,6 +17,7 @@ class Koordinator:
 
     def onPersonErkannt(self):
         print('Gesicht erkannt')
+        self.ge.abmelden()
         ret = self.nd.begruesse()
         print('ret=',ret)
         if ret==0:
@@ -26,7 +27,17 @@ class Koordinator:
             self.bw.greifeObjektLinks()
         if (ret==2):
             print('Mars')
+            self.bw.greifeObjektRechts()
+        self.nd.ueberreiche()
 
+        # Warte noch eine Sicherheitspause, bevor die Hand geschlossen wird
+        dialogDauer = 10.0
+        dialogStart = time.time()
+        while time.time()-dialogStart<dialogDauer:
+            time.sleep(1)
+        self.bw.zuruecklegenObjekt()
+        self.ge.anmelden(self.onPersonErkannt)
+        
     def ausgeben(self):
         print(self.name)
 		

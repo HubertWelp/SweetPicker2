@@ -5,7 +5,7 @@
     der mit dem NAO verbunden ist.
     Von der Klasse muss ein globales Objekt erzeugt werden. Der Objektname muss dem Konstruktor als Parameter übergeben werden. 
     Beispiel: ge = Gesichtserkenner("ge")
-    Zur Gesichtserkennung muss das Objekt mit der run-Methode in eine Endlosschleife versetzt werden. Bei Detektion eines Gesichts 
+    Zur Gesichtserkennung muss das anwendende in eine Endlosschleife versetzt werden. Bei Detektion eines Gesichts 
     benachrichtigt das Gesichtserkenner-Objekt einen anderen Programmteil durch Aufruf einer Callback-Funktion, die vorab beim 
     Gesichtserkenner mit der Methode anmelden() registriert werden muss.
 """
@@ -50,15 +50,14 @@ class Gesichtserkenner(ALModule):
 	def abmelden(self):
 		self.callBack = None
 
-	def run(self):
-                print("run")
 
         def onFaceDetected(self):
-                memory.unsubscribeToEvent("FaceDetected",self.globalObjectName)
                 if self.callBack == None:
                         print('no one to call')
                 else:
+                        val = memory.getData("FaceDetected")
+                        memory.unsubscribeToEvent("FaceDetected",self.globalObjectName)
                         self.callBack()
-                memory.subscribeToEvent("FaceDetected",self.globalObjectName,"onFaceDetected")
+                        memory.subscribeToEvent("FaceDetected",self.globalObjectName,"onFaceDetected")
 		
 

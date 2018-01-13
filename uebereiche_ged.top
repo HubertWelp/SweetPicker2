@@ -1,0 +1,8 @@
+topic: ~ExampleDialog2()
+language: ged
+concept:(verabschiedung) ^rand[tschüss "auf wiedersehen" bei "bis zum nächsten mal"]
+
+proposal: "Bitte schön"
+u: (e:onStart) "Bitte schön"
+u: ([Vielen Dank Danke]) ~verabschiedung $retDialog=1
+u: ([e:Dialog/NotSpeaking20 e:Dialog/NotUnderstood]) ~verabschiedung $retDialog=0
