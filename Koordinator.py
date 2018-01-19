@@ -7,6 +7,7 @@ from naoqi import ALBroker
 from optparse import OptionParser
 #Version 1
 #Version 2
+#Version 3
 class Koordinator:
 
     def __init__(self, name, gesichtserkenner,begruesser):
