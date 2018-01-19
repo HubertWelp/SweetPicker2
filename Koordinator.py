@@ -5,8 +5,7 @@ from NutzerDialog import NutzerDialog
 from Bewegung import Bewegung
 from naoqi import ALBroker
 from optparse import OptionParser
-#Version 1
-#Version 2
+
 class Koordinator:
 
     def __init__(self, name, gesichtserkenner,begruesser):
