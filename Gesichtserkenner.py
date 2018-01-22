@@ -28,7 +28,7 @@ class Gesichtserkenner(ALModule):
 
 		
 	def anmelden(self,callBack):
-		"""Registrieren zur Benachrichtigung bei einem PersonenErkannt- Ereignis.
+		"""Registrieren zur Benachrichtigung bei Eintreten eines PersonenErkannt-Ereignis.
 
                 Hiermit meldet sich ein Subscriber-Objekt an, um informiert zu werden, falls von 
 		einem Objekt dieser Klasse eine Person erkannt worden ist. Hier zu ist eine Rückrüf (Call-Back)-
@@ -48,10 +48,40 @@ class Gesichtserkenner(ALModule):
 		self.callBack = callBack
 
 	def abmelden(self):
+		"""Beendigung der Registrierung für PersonenErkannt-Ereignisse.
+
+                Hiermit meldet sich ein Subscriber-Objekt ab, um nicht weiter informiert zu werden, falls von 
+		einem Objekt dieser Klasse eine Person erkannt worden ist. 
+
+                Parameters
+                ----------
+                keine
+
+                Returns
+                -------
+                void
+                        nichts
+
+                """	
 		self.callBack = None
 
 
         def onFaceDetected(self):
+                """Ereignisbehandlungsmethode für Gesichtserkennung
+
+                Diese von ALModule geerbte Methode wird vom NAOqi-Frameworkaufgerufen, sobald ein Gesicht erkannt wurde.
+                Die Methode ruft eine ggf. registrierte Call-Back-Methode auf.
+                
+                Parameters
+                ----------
+                keine
+
+                Returns
+                -------
+                void
+                        nichts
+
+                """	
                 if self.callBack == None:
                         print('no one to call')
                 else:
