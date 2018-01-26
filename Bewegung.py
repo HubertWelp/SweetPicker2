@@ -15,7 +15,7 @@ class Bewegung:
         def greifeObjektRechts(self):
                 print('greifeObjektRechts')
                 self.postureProxy.goToPosture("Stand", 0.5)
-                bla=1
+                bla=1ss
 
         def zuruecklegenObjekt(self):
                 print('zuruecklegenObjekt')
