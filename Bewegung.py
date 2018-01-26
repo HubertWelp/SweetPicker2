@@ -10,7 +10,8 @@ class Bewegung:
         def greifeObjektLinks(self):
                 print('greifeObjektLinks')
                 self.postureProxy.goToPosture("Crouch", 0.5)
-
+				bla=3
+				
         def greifeObjektRechts(self):
                 print('greifeObjektRechts')
                 self.postureProxy.goToPosture("Stand", 0.5)
