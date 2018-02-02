@@ -28,9 +28,10 @@ class NutzerDialog(ALModule):
 #        self.topf_pathBegruesse = "C:\\Users\\ITL.NAO.1\\Documents\\SWT-SP2\\SweetPicker2\\begruessung_ged.top"
 #        self.topf_pathBegruesse = self.topf_pathBegruesse.decode('utf-8')
 #        self.topic = self.dialog_p.loadTopic(self.topf_pathBegruesse.encode('utf-8'))
-#        self.topf_pathBegruesse = "/home/nao/begruessung_ged.top"
-        self.topf_pathBegruesse = "/home/welp/python/SweetPicker2/begruessung_ged.top"
-        self.topf_pathUeberreiche = "/home/welp/python/SweetPicker2/uebereiche_ged.top"
+        self.topf_pathBegruesse = "/home/nao/begruessung_ged.top"
+        self.topf_pathUeberreiche = "/home/nao/uebereiche_ged.top"
+#        self.topf_pathBegruesse = "/home/welp/python/SweetPicker2/begruessung_ged.top"
+#        self.topf_pathUeberreiche = "/home/welp/python/SweetPicker2/uebereiche_ged.top"
         global memory
         memory = ALProxy("ALMemory")
         print(self.globalObjectName)

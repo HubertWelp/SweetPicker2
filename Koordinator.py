@@ -14,6 +14,7 @@ class Koordinator:
         self.ge.anmelden(self.onPersonErkannt)
         self.nd = begruesser
         self.bw = Bewegung()
+        self.bw.geheInGrundzustand()
 
     def onPersonErkannt(self):
         print('Gesicht erkannt')
@@ -23,26 +24,34 @@ class Koordinator:
         if ret==0:
             print('keine Antowrt')
         if (ret==1):
-            print('Milky Way')  
+            print('Mars')  
             self.bw.greifeObjektLinks()
+            self.nd.ueberreiche()
+            # Warte noch eine Sicherheitspause, bevor die Hand geschlossen wird
+            dialogDauer = 10.0
+            dialogStart = time.time()
+            while time.time()-dialogStart<dialogDauer:
+                time.sleep(1)
+            self.bw.zuruecklegenObjektLinks()
         if (ret==2):
-            print('Mars')
+            print('Milky Way')
             self.bw.greifeObjektRechts()
-        self.nd.ueberreiche()
+            self.nd.ueberreiche()
+            # Warte noch eine Sicherheitspause, bevor die Hand geschlossen wird
+            dialogDauer = 10.0
+            dialogStart = time.time()
+            while time.time()-dialogStart<dialogDauer:
+                time.sleep(1)
+            self.bw.zuruecklegenObjektRechts()
 
-        # Warte noch eine Sicherheitspause, bevor die Hand geschlossen wird
-        dialogDauer = 10.0
-        dialogStart = time.time()
-        while time.time()-dialogStart<dialogDauer:
-            time.sleep(1)
-        self.bw.zuruecklegenObjekt()
+
         self.ge.anmelden(self.onPersonErkannt)
         
     def ausgeben(self):
         print(self.name)
 		
 
-NAO_IP = "127.0.0.1"
+NAO_IP = "192.168.76.101"
 gesichtserkenner = None
 begruesser = None
 
@@ -84,7 +93,7 @@ def main():
     gesichtserkenner = Gesichtserkenner("gesichtserkenner")
     begruesser = NutzerDialog("begruesser")
     k=Koordinator("BLA", gesichtserkenner,begruesser)
-    gesichtserkenner.onFaceDetected()
+#    gesichtserkenner.onFaceDetected()
 #    gesichtserkenner.run()
     try:
         while True:
