@@ -93,7 +93,7 @@ def main():
     gesichtserkenner = Gesichtserkenner("gesichtserkenner")
     begruesser = NutzerDialog("begruesser")
     k=Koordinator("BLA", gesichtserkenner,begruesser)
-#    gesichtserkenner.onFaceDetected()
+    gesichtserkenner.onFaceDetected()
 #    gesichtserkenner.run()
     try:
         while True:
