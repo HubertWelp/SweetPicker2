@@ -44,7 +44,10 @@ class Koordinator:
                 time.sleep(1)
             self.bw.zuruecklegenObjektRechts()
 
-
+        dialogDauer = 20.0
+        dialogStart = time.time()
+        while time.time()-dialogStart<dialogDauer:
+            time.sleep(1)
         self.ge.anmelden(self.onPersonErkannt)
         
     def ausgeben(self):
@@ -93,7 +96,7 @@ def main():
     gesichtserkenner = Gesichtserkenner("gesichtserkenner")
     begruesser = NutzerDialog("begruesser")
     k=Koordinator("BLA", gesichtserkenner,begruesser)
-    gesichtserkenner.onFaceDetected()
+#    gesichtserkenner.onFaceDetected()
 #    gesichtserkenner.run()
     try:
         while True:
