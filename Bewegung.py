@@ -44,6 +44,7 @@ class Bewegung:
                 time.sleep(2.0)
 	def greifeObjektRechts(self):
                 print('greifeObjektRechts')
+
                 self.motionProxy.openHand('RHand')
                 time.sleep(1.0)
 
@@ -90,4 +91,4 @@ class Bewegung:
                 self.motionProxy.setAngles('RWristYaw', -0.74, 0.2)
                 time.sleep(2.0)
                 self.motionProxy.setAngles('RHand', 1 ,0.2)
-        self.motionProxy.openHand('RHand')
+                self.motionProxy.openHand('RHand')
