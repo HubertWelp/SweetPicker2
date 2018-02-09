@@ -44,8 +44,6 @@ class Bewegung:
                 time.sleep(2.0)
 	def greifeObjektRechts(self):
                 print('greifeObjektRechts')
-                self.postureProxy.goToPosture("Sit", 0.5)
-
                 self.motionProxy.openHand('RHand')
                 time.sleep(1.0)
 
@@ -58,19 +56,15 @@ class Bewegung:
                 time.sleep(2.0)
                 self.motionProxy.setAngles('RHand', 0 ,0.2)
                 self.motionProxy.closeHand('RHand')
-
-                time.sleep(2.0)
-
-                self.motionProxy.setAngles('RShoulderPitch', +0.71, 0.2)
-                self.motionProxy.setAngles('RShoulderRoll', -0.31, 0.2)
-                self.motionProxy.setAngles('RElbowRoll', 1,02, 0.2)
-                self.motionProxy.setAngles('RElbowYaw', 1.69, 0.2)
-                self.motionProxy.setAngles('RWristYaw', 1.64, 0.2)
+                
+                self.motionProxy.setAngles('RShoulderPitch', 0.20, 0.2)
+                self.motionProxy.setAngles('RShoulderRoll', -0.28, 0.2)
+                self.motionProxy.setAngles('RElbowRoll', 0.22, 0.2)
+                self.motionProxy.setAngles('RElbowYaw', 1.34, 0.2)
+                self.motionProxy.setAngles('RWristYaw', 1.80, 0.2)
                 time.sleep(2.0)
                 self.motionProxy.setAngles('RHand', 1 ,0.2)
                 self.motionProxy.openHand('RHand')
-
-                time.sleep(2.0)
                                 
 		
         def zuruecklegenObjektLinks(self):
@@ -95,7 +89,5 @@ class Bewegung:
                 self.motionProxy.setAngles('RElbowYaw', 1.34, 0.2)
                 self.motionProxy.setAngles('RWristYaw', -0.74, 0.2)
                 time.sleep(2.0)
-                self.motionProxy.setAngles('RHand', 0 ,0.2)
-                self.motionProxy.openHand('RHand')
-
-
+                self.motionProxy.setAngles('RHand', 1 ,0.2)
+        self.motionProxy.openHand('RHand')
