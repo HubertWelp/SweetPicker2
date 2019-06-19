@@ -1,2 +1,2 @@
 # SweetPicker2
-Complementing version of the previous SweetPicker1 project
+Erweiterung des vorherigen SweetPicker1-Projekts um gezielte Gesichtserkennung, Sprachsteuerung und gezielte Greifbewegungen. 
